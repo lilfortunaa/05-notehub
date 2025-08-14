@@ -9,7 +9,8 @@ interface PaginationProps {
 export default function Pagination({
   pageCount,
   onPageChange,
-}: PaginationProps) {
+  currentPage,
+}: PaginationProps & { currentPage: number }) {
   return (
     <ReactPaginate
       breakLabel="..."
@@ -17,6 +18,7 @@ export default function Pagination({
       onPageChange={(event) => onPageChange(event.selected + 1)}
       pageRangeDisplayed={5}
       pageCount={pageCount}
+      forcePage={currentPage - 1}
       previousLabel="<"
       containerClassName={css.pagination}
       activeClassName={css.active}
