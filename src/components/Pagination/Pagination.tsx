@@ -3,6 +3,7 @@ import css from "./Pagination.module.css";
 
 interface PaginationProps {
   pageCount: number;
+  currentPage: number;
   onPageChange: (page: number) => void;
 }
 
@@ -10,7 +11,7 @@ export default function Pagination({
   pageCount,
   onPageChange,
   currentPage,
-}: PaginationProps & { currentPage: number }) {
+}: PaginationProps) {
   return (
     <ReactPaginate
       breakLabel="..."
